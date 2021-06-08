@@ -7,7 +7,7 @@
     <display-name>Gupao Web Application</display-name>
     <servlet>
         <servlet-name>gpmvc</servlet-name>
-        <servlet-class>com.spring.lite.servelet.GPDispatcherServlet</servlet-class>
+        <servlet-class>com.spring.lite.framework.webmvc.servlet.GPDispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>D:\\spring-lite\\src\\main\\webapp\\WEB-INF\\application.properties</param-value>

@@ -1,4 +1,4 @@
-package com.spring.lite.annotation;
+package com.spring.lite.framework.annotation;
 
 import java.lang.annotation.*;
 
@@ -7,9 +7,10 @@ import java.lang.annotation.*;
  * @Description
  * @date 2021-05-25
  */
-@Target(ElementType.TYPE)
+@Target({ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface GPService {
+public @interface GPRequestParam {
+
     String value() default "";
 }

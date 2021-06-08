@@ -1,6 +1,7 @@
 package com.spring.lite.service;
 
-import com.spring.lite.annotation.GPService;
+
+import com.spring.lite.framework.annotation.GPService;
 
 /**
  * @author wangtianqi20

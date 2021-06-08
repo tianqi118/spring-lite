@@ -1,9 +1,9 @@
 package com.spring.lite.controller;
 
-import com.spring.lite.annotation.GPAutowired;
-import com.spring.lite.annotation.GPController;
-import com.spring.lite.annotation.GPRequestMapping;
-import com.spring.lite.annotation.GPRequestParam;
+import com.spring.lite.framework.annotation.GPAutowired;
+import com.spring.lite.framework.annotation.GPController;
+import com.spring.lite.framework.annotation.GPRequestMapping;
+import com.spring.lite.framework.annotation.GPRequestParam;
 import com.spring.lite.service.IDemoService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +16,7 @@ import java.io.IOException;
  * @date 2021-05-25
  */
 @GPController
-@GPRequestMapping("/demo")
+@GPRequestMapping("/web")
 public class DemoController {
 
     @GPAutowired

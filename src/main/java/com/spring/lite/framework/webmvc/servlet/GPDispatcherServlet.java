@@ -1,9 +1,10 @@
-package com.spring.lite.servelet;
+package com.spring.lite.framework.webmvc.servlet;
 
-import com.spring.lite.annotation.GPAutowired;
-import com.spring.lite.annotation.GPController;
-import com.spring.lite.annotation.GPRequestMapping;
-import com.spring.lite.annotation.GPService;
+
+import com.spring.lite.framework.annotation.GPAutowired;
+import com.spring.lite.framework.annotation.GPController;
+import com.spring.lite.framework.annotation.GPRequestMapping;
+import com.spring.lite.framework.annotation.GPService;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -25,6 +26,10 @@ import java.util.*;
  * @date 2021-05-25
  */
 public class GPDispatcherServlet extends HttpServlet {
+
+
+    private final String LOCATION = "contextConfigLocation";
+
     //保存所有扫描的类名
     private List<String> claassNames = new ArrayList<String>();
     //Ioc容器
@@ -96,6 +101,7 @@ public class GPDispatcherServlet extends HttpServlet {
             is = this.getClass().getClassLoader().getResourceAsStream(config.getInitParameter("contextConfigLocation"));
             configContext.load(new FileInputStream(file));
             String scanPackage = configContext.getProperty("scanPackage");
+            System.out.println("scanPackage:" + scanPackage);
             return scanPackage;
         } catch (Exception e) {
             e.printStackTrace();
@@ -127,7 +133,7 @@ public class GPDispatcherServlet extends HttpServlet {
                     continue;
                 }
                 String clazzName = (scanPackage + "." + file.getName().replace(".class", ""));
-//                System.out.println("扫描类：" + clazzName);
+                System.out.println("扫描类：" + clazzName);
                 claassNames.add(clazzName);
             }
         }
@@ -208,7 +214,7 @@ public class GPDispatcherServlet extends HttpServlet {
         }
     }
 
-    
+
     /**
      * 初始化handler
      */

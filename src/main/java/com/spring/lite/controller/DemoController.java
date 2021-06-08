@@ -12,11 +12,11 @@ import java.io.IOException;
 
 /**
  * @author wangtianqi20
- * @Description
+ * @Description Controller层负责调度，不负责实现
  * @date 2021-05-25
  */
 @GPController
-@GPRequestMapping("/web")
+@GPRequestMapping("/demo")
 public class DemoController {
 
     @GPAutowired
